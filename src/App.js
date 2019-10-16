@@ -1,8 +1,14 @@
 import React from "react";
+import '../styles/style.css'
+import { Router } from "@reach/router"
+import Navbar from '../components/Navbar'
+import All from '../components/All'
 
 export default () => (
-  <>
-    <h1>Welcome to React Parcel Micro App!</h1>
-    <p>Hard to get more minimal than this React app.</p>
-  </>
-);
+  <div className="container">
+    <Navbar />
+    <Router>
+      <All path="/" />
+    </Router>
+  </div>
+)
