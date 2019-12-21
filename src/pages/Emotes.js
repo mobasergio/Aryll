@@ -3,7 +3,7 @@ import Axios from 'axios';
 import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
 
-const All = () => {
+const Emotes = () => {
   const [urls, setUrls] = useState([]);
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
@@ -19,13 +19,13 @@ const All = () => {
   };
 
   useEffect(() => {
-    Axios.get('http://res.cloudinary.com/nytz/image/list/all.json')
+    Axios.get('http://res.cloudinary.com/aryll/image/list/emotes.json')
       .then(result => setUrls(result.data.resources))
       .catch(error => console.log('error:', error));
     }, []);
   
   const photos = []
-  urls.map(x => photos.push({src: `http://res.cloudinary.com/nytz/${x.public_id}`, width: 1, height: 1}))
+  urls.map(x => photos.push({src: `http://res.cloudinary.com/aryll/${x.public_id}`, width: 1, height: 1}))
 
   return (
     <main>
@@ -44,4 +44,4 @@ const All = () => {
 
 };
 
-export default All;
+export default Emotes;

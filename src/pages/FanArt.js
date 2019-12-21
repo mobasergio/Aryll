@@ -3,7 +3,7 @@ import Axios from 'axios';
 import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
 
-const Cat1 = () => {
+const FanArt = () => {
   const [urls, setUrls] = useState([]);
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
@@ -19,13 +19,13 @@ const Cat1 = () => {
   };
 
   useEffect(() => {
-    Axios.get('http://res.cloudinary.com/nytz/image/list/fox.json')
+    Axios.get('http://res.cloudinary.com/aryll/image/list/fanarts.json')
       .then(result => setUrls(result.data.resources))
       .catch(error => console.log('error:', error));
     }, []);
   
   const photos = []
-  urls.map(x => photos.push({src: `http://res.cloudinary.com/nytz/${x.public_id}`, width: 1, height: 1}))
+  urls.map(x => photos.push({src: `http://res.cloudinary.com/aryll/${x.public_id}`, width: 1, height: 1}))
 
   return (
     <main>
@@ -44,4 +44,4 @@ const Cat1 = () => {
 
 };
 
-export default Cat1;
+export default FanArt;

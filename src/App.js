@@ -2,10 +2,11 @@ import React from "react";
 import './styles/style.css'
 import { Router } from "@reach/router"
 import Navbar from './components/Navbar'
-import All from './pages/All'
-import Cat1 from './pages/Cat1'
-import Cat2 from './pages/Cat2'
-import About from './pages/About'
+import Home from './pages/Home'
+import CharacterDesign from './pages/CharacterDesign'
+import FanArt from './pages/FanArt'
+import Emotes from './pages/Emotes'
+import Concept from './pages/Concept'
 import Contact from './pages/Contact'
 import Privacy from './pages/Privacy'
 
@@ -13,10 +14,11 @@ export default () => (
   <div className="container">
     <Navbar />
     <Router>
-      <All path="/" />
-      <Cat1 path="/cat1"/>
-      <Cat2 path="/cat2"/>
-      <About path="/about"/>
+      <Home path="/" />
+      <CharacterDesign path="/character-design"/>
+      <FanArt path="/fanart"/>
+      <Emotes path="/emotes"/>
+      <Concept path="/concept"/>
       <Contact path="/contact"/>
       <Privacy path="/privacy-policy"/>
     </Router>
