@@ -5,6 +5,7 @@ import Carousel, { Modal, ModalGateway } from "react-images";
 
 const FanArt = () => {
   const [urls, setUrls] = useState([]);
+  const [thumbUrls, setThumbUrls] = useState([]);
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
@@ -27,10 +28,13 @@ const FanArt = () => {
   const photos = []
   urls.map(x => photos.push({src: `http://res.cloudinary.com/aryll/${x.public_id}`, width: 1, height: 1}))
 
+  const thumbPhotos = []
+  urls.map(x => thumbPhotos.push({src: `http://res.cloudinary.com/aryll/c_thumb,w_400,g_face/${x.public_id}`, width: 1, height: 1}))
+
   return (
     <main>
       <div id="gallery">
-        <Gallery photos={photos} onClick={openLightbox} />
+        <Gallery photos={thumbPhotos} onClick={openLightbox} />
         <ModalGateway>
           {viewerIsOpen ? (
             <Modal onClose={closeLightbox}>
