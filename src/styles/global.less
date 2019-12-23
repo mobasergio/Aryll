@@ -1,0 +1,34 @@
+.hide {
+  z-index: -5;
+  opacity: 0;
+  transition: 0.5s;
+  pointer-events: none
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  background: url('../assets/background.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #a9ced6;
+  color: #444444;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  max-width: 1200px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 10px;
+}

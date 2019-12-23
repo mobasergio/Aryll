@@ -83,7 +83,7 @@ body {
   text-align: center;
   width: 100%;
   list-style-type: none;
-  font-family: 'Elsie', cursive;
+  font-family: "Elsie", cursive;
   font-size: 24px;
   margin-top: 120px;
   user-select: none;
@@ -144,11 +144,11 @@ body {
   margin: 20px 0 50px 0;
 }
 .container > div main #bio h1 {
-  font-family: 'Elsie', cursive;
+  font-family: "Elsie", cursive;
   font-size: 36px;
 }
 .container > div main #bio p {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
   text-align: justify;
 }
@@ -160,7 +160,7 @@ body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 .container > div main #about h1 {
-  font-family: 'Elsie', cursive;
+  font-family: "Elsie", cursive;
 }
 .container > div main #about h2 {
   color: #FFB6C1;
@@ -197,7 +197,7 @@ body {
     margin: 0 auto;
     text-align: center;
     list-style-type: none;
-    font-family: 'Elsie', cursive;
+    font-family: "Elsie", cursive;
     font-size: 22px;
   }
   .container header nav > div:nth-of-type(2) ul li {
@@ -208,9 +208,9 @@ body {
     text-decoration: none;
   }
   .container header nav > div:nth-of-type(2) ul li a:hover {
-    color: #FFB6C1 !important;
+    color: #ffb6c1 !important;
   }
-  .container header nav > div:nth-of-type(2) ul li:nth-child(n+6) > a {
+  .container header nav > div:nth-of-type(2) ul li:nth-child(n + 6) > a {
     opacity: 0.7;
   }
   .container main {

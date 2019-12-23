@@ -5,7 +5,6 @@ import Carousel, { Modal, ModalGateway } from "react-images";
 
 const Concept = () => {
   const [urls, setUrls] = useState([]);
-  const [thumbUrls, setThumbUrls] = useState([]);
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
 

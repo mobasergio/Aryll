@@ -1,5 +1,5 @@
 import React from "react";
-import './styles/style.css'
+import './styles/aver.css'
 import { Router } from "@reach/router"
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
