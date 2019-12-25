@@ -8,7 +8,7 @@ import FanArt from './pages/FanArt'
 import Emotes from './pages/Emotes'
 import Concept from './pages/Concept'
 import Contact from './pages/Contact'
-import Privacy from './pages/Privacy'
+import Disclaimer from './pages/Disclaimer'
 
 export default () => (
   <div className="container">
@@ -20,7 +20,7 @@ export default () => (
       <Emotes path="/emotes"/>
       <Concept path="/concept"/>
       <Contact path="/contact"/>
-      <Privacy path="/privacy-policy"/>
+      <Disclaimer path="/disclaimer"/>
     </Router>
   </div>
 )

@@ -10,10 +10,9 @@ const Home = () => {
       <div id="bio">
         <h1>Hola! Soy Rosana</h1>
         <p>
-          Me gradué en Bellas Artes en la Universidad de Sevilla y tengo un master en Noseque de Personajes en la escuela
-          noseque de Madrid. A dia de hoy soy experta en ilustración y streamer a tiempo completo. Y yo que se que mas poner
-          si este texto solo es para ver como queda ya me diras tu, la cosa es que cuentes tu vida un poquito y que digas a lo
-          que te dedicas y ya esta y pa casa, aunque cuanto mas turra mejor la verdad.
+          Me gradué en Ilustración Digital y Visual Development en la Escuela Trazos (Madrid), e hice un máster de Experta
+          en Diseño de Personajes en el Centro Universitario UTAD (Madrid). He trabajado en proyectos de videojuegos indie,
+          aunque ahora estoy trabajando como ilustradora freelance. Además hago streamings todos los dias en mi canal de Twitch 
         </p>
       </div>
       <iframe

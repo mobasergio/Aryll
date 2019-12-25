@@ -18,11 +18,12 @@
   margin: 20px 0 50px 0;
 }
 .container > div main #bio h1 {
-  font-family: 'Elsie', cursive;
+  font-family: "Fire Sans", sans-serif;
   font-size: 36px;
+  text-align: center;
 }
 .container > div main #bio p {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 18px;
   text-align: justify;
 }
@@ -34,7 +35,7 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 .container > div main #about h1 {
-  font-family: 'Elsie', cursive;
+  font-family: "Fire Sans", sans-serif;
 }
 .container > div main #about h2 {
   color: #FFB6C1;

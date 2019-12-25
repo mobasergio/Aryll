@@ -52,10 +52,11 @@
   text-align: center;
   width: 100%;
   list-style-type: none;
-  font-family: 'Elsie', cursive;
+  font-family: "Fire Sans", sans-serif;
   font-size: 24px;
   margin-top: 120px;
   user-select: none;
+  text-transform: uppercase;
 }
 .container header #menu ul li {
   margin-top: 5px;

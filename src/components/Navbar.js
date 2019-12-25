@@ -38,13 +38,13 @@ const Navbar = () => {
         <div>
           <div> <Link to="/"><img id="logo" src={Sakura}  alt=""/></Link> </div>
           <ul>
-            <li><NavLink to="/">HOME</NavLink></li>
-            <li><NavLink to="/character-design">CHARACTER DESIGN</NavLink></li>
-            <li><NavLink to="/fanart">FANART</NavLink></li>
-            <li><NavLink to="/emotes">EMOTES</NavLink></li>
-            <li><NavLink to="/concept">CONCEPT</NavLink></li>
+            <li><NavLink to="/">Home</NavLink></li>
+            <li><NavLink to="/character-design">Character Design</NavLink></li>
+            <li><NavLink to="/fanart">Fanart</NavLink></li>
+            <li><NavLink to="/emotes">Emotes</NavLink></li>
+            <li><NavLink to="/concept">Concept</NavLink></li>
             <li><NavLink to="/contact">Contact</NavLink></li>
-            <li><NavLink to="/privacy-policy">Privacy policy</NavLink></li>
+            <li><NavLink to="/disclaimer">Disclaimer</NavLink></li>
             <ul id="social">
               <li><a href="https://www.twitter.com/PsychoAryll" target="_blank"><img src={Twitter} alt=""/></a></li>
               <li><a href="https://www.instagram.com/psychoaryll/" target="_blank"><img src={Instagram} alt=""/></a></li>
@@ -55,13 +55,13 @@ const Navbar = () => {
       </nav>
       <div id="menu" className={menu ? 'hide' : ''}>
         <ul>
-          <li><Link to="/" onClick={() => toggleMenu()}>HOME</Link></li>
-          <li><Link to="/character-design" onClick={() => toggleMenu()}>CHARACTER DESIGN</Link></li>
-          <li><Link to="/fanart" onClick={() => toggleMenu()}>FANART</Link></li>
-          <li><Link to="/emotes" onClick={() => toggleMenu()}>EMOTES</Link></li>
-          <li><Link to="/concept" onClick={() => toggleMenu()}>CONCEPT</Link></li>
+          <li><Link to="/" onClick={() => toggleMenu()}>Home</Link></li>
+          <li><Link to="/character-design" onClick={() => toggleMenu()}>Character Design</Link></li>
+          <li><Link to="/fanart" onClick={() => toggleMenu()}>Fanart</Link></li>
+          <li><Link to="/emotes" onClick={() => toggleMenu()}>Emotes</Link></li>
+          <li><Link to="/concept" onClick={() => toggleMenu()}>Concept</Link></li>
           <li><Link to="/contact" onClick={() => toggleMenu()}>Contact</Link></li>
-          <li><Link to="/privacy-policy" onClick={() => toggleMenu()}>Privacy policy</Link></li>
+          <li><Link to="/disclaimer" onClick={() => toggleMenu()}>Disclaimer</Link></li>
         </ul>
         <div>
           <ul>
