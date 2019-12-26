@@ -8,7 +8,7 @@ const Home = () => {
         <img src={Profile} alt=""/>
       </div>
       <div id="bio">
-        <h1>Hola! Soy Rosana</h1>
+        <h1>¡Hola! Soy Rosana</h1>
         <p>
           Me gradué en Ilustración Digital y Visual Development en la Escuela Trazos (Madrid), e hice un máster de Experta
           en Diseño de Personajes en el Centro Universitario UTAD (Madrid). He trabajado en proyectos de videojuegos indie,

@@ -96,14 +96,11 @@ body {
   margin-top: 5px;
 }
 .container header #menu ul li a {
-  color: black;
+  color: #444444;
   text-decoration: none;
 }
 .container header #menu ul li a:hover {
   color: #FFB6C1;
-}
-.container header #menu ul li:nth-child(n+6) > a {
-  opacity: 0.7;
 }
 .container header #menu div {
   max-height: 80px;
@@ -212,9 +209,6 @@ body {
   .container header nav > div:nth-of-type(2) ul li a {
     color: black;
     text-decoration: none;
-  }
-  .container header nav > div:nth-of-type(2) ul li:nth-child(n + 6) > a {
-    opacity: 0.7;
   }
   .container main {
     width: 75%;
