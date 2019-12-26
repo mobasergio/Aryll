@@ -2,6 +2,9 @@
   height: 110px;
   width: 100%;
 }
+.container header nav {
+  font-family: "Montserrat", sans-serif;
+}
 .container header nav > div:nth-of-type(1) {
   display: flex;
   margin: 30px auto;
@@ -52,7 +55,7 @@
   text-align: center;
   width: 100%;
   list-style-type: none;
-  font-family: "Fire Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 24px;
   margin-top: 120px;
   user-select: none;
