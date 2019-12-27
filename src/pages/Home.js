@@ -19,9 +19,9 @@ const Home = () => {
         src="https://player.twitch.tv/?channel=aryllchan&muted=true"
         width="320"
         height="180"
-        frameborder="0"
+        frameBorder="0"
         scrolling="no"
-        allowfullscreen="true">
+        allowFullScreen={true}>
       </iframe>
     </main>
   );

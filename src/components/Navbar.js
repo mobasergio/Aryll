@@ -23,9 +23,14 @@ const NavLink = props => (
 
 const Navbar = () => {
   const [menu, setMenu] = useState(true);
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
   const toggleMenu = () => {
+    topFunction();
     setMenu(!menu);
-    menu == true ? disableScroll.on() : disableScroll.off()
+    menu == true ? disableScroll.on() : disableScroll.off();
   };
 
   return (
