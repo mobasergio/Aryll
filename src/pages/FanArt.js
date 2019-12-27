@@ -19,7 +19,7 @@ const FanArt = () => {
   };
 
   useEffect(() => {
-    Axios.get('http://res.cloudinary.com/aryll/image/list/fanarts.json')
+    Axios.get('https://res.cloudinary.com/aryll/image/list/fanarts.json')
       .then(result => setUrls(result.data.resources))
       .catch(error => console.log('error:', error));
     }, []);

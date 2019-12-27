@@ -19,7 +19,7 @@ const Concept = () => {
   };
 
   useEffect(() => {
-    Axios.get('http://res.cloudinary.com/aryll/image/list/concept.json')
+    Axios.get('https://res.cloudinary.com/aryll/image/list/concept.json')
       .then(result => setUrls(result.data.resources))
       .catch(error => console.log('error:', error));
     }, []);
