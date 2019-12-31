@@ -27,6 +27,8 @@
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
   text-align: justify;
+  max-width: 742px;
+  margin: 0 auto;
 }
 .container > div main iframe {
   display: none;

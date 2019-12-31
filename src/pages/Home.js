@@ -5,14 +5,17 @@ const Home = () => {
   return (
     <main>
       <div id="profile">
-        <img src={Profile} alt=""/>
+        <img src={Profile} alt="" />
       </div>
       <div id="bio">
-        <h1>¡Hola! Soy Rosana</h1>
+        <h1>Hi! I'm Rosana</h1>
         <p>
-          Me gradué en Ilustración Digital y Visual Development en la Escuela Trazos (Madrid), e hice un máster de Experta
-          en Diseño de Personajes en el Centro Universitario UTAD (Madrid). He trabajado en proyectos de videojuegos indie,
-          aunque ahora estoy trabajando como ilustradora freelance. Además hago streamings todos los dias en mi canal de Twitch 
+          I'm a 27 years old girl from Spain. I've studied Arts at Sevilla
+          University, Digital Illustration and Visual Development at Escuela
+          Trazos (Madrid), and a Character Design Expert program at U-TAD, The
+          Digital University Centre (Madrid). I've worked in some indie
+          videogame projects, but currently I'm working as a freelance
+          illustrator. Also, I stream everyday on my Twitch channel.
         </p>
       </div>
       <iframe
@@ -21,8 +24,8 @@ const Home = () => {
         height="180"
         frameBorder="0"
         scrolling="no"
-        allowFullScreen={true}>
-      </iframe>
+        allowFullScreen={true}
+      ></iframe>
     </main>
   );
 };
