@@ -40,6 +40,9 @@
       }
       >div:nth-of-type(2){
         display: none;
+        > ul li a:hover {
+          color: #FFB6C1 !important;
+        }
         div:nth-of-type(1) {
           width: 48px;
           height: 48px;
@@ -49,6 +52,9 @@
           margin-top: 20px;
           display: flex;
           justify-content: space-evenly;
+          > li a img:hover {
+            filter: invert(78%) sepia(14%) saturate(873%) hue-rotate(304deg) brightness(130%) contrast(114%);
+          }
         }
       }
     }
@@ -76,9 +82,6 @@
           a {
             color: #444444;
             text-decoration: none;
-          }
-          a:hover {
-            color: #FFB6C1;
           }
         }
       }

@@ -37,6 +37,9 @@
 .container header nav > div:nth-of-type(2) {
   display: none;
 }
+.container header nav > div:nth-of-type(2) > ul li a:hover {
+  color: #FFB6C1 !important;
+}
 .container header nav > div:nth-of-type(2) div:nth-of-type(1) {
   width: 48px;
   height: 48px;
@@ -46,6 +49,9 @@
   margin-top: 20px;
   display: flex;
   justify-content: space-evenly;
+}
+.container header nav > div:nth-of-type(2) #social > li a img:hover {
+  filter: invert(78%) sepia(14%) saturate(873%) hue-rotate(304deg) brightness(130%) contrast(114%);
 }
 .container header #menu {
   top: 0;
@@ -74,9 +80,6 @@
 .container header #menu ul li a {
   color: #444444;
   text-decoration: none;
-}
-.container header #menu ul li a:hover {
-  color: #FFB6C1;
 }
 .container header #menu div {
   max-height: 80px;

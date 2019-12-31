@@ -61,13 +61,13 @@ const Navbar = () => {
       </nav>
       <div id="menu" className={menu ? 'hide' : ''}>
         <ul>
-          <li><Link to="/" onClick={() => toggleMenu()}>Home</Link></li>
-          <li><Link to="/character-design" onClick={() => toggleMenu()}>Character Design</Link></li>
-          <li><Link to="/fanart" onClick={() => toggleMenu()}>Fanart</Link></li>
-          <li><Link to="/emotes" onClick={() => toggleMenu()}>Emotes</Link></li>
-          <li><Link to="/concept" onClick={() => toggleMenu()}>Concept</Link></li>
-          <li><Link to="/contact" onClick={() => toggleMenu()}>Contact</Link></li>
-          <li><Link to="/disclaimer" onClick={() => toggleMenu()}>Disclaimer</Link></li>
+          <li><NavLink to="/" onClick={() => toggleMenu()}>Home</NavLink></li>
+          <li><NavLink to="/character-design" onClick={() => toggleMenu()}>Character Design</NavLink></li>
+          <li><NavLink to="/fanart" onClick={() => toggleMenu()}>Fanart</NavLink></li>
+          <li><NavLink to="/emotes" onClick={() => toggleMenu()}>Emotes</NavLink></li>
+          <li><NavLink to="/concept" onClick={() => toggleMenu()}>Concept</NavLink></li>
+          <li><NavLink to="/contact" onClick={() => toggleMenu()}>Contact</NavLink></li>
+          <li><NavLink to="/disclaimer" onClick={() => toggleMenu()}>Disclaimer</NavLink></li>
         </ul>
         <div>
           <ul>
