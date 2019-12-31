@@ -55,6 +55,7 @@ const Navbar = () => {
               <li><a href="https://www.instagram.com/psychoaryll/" target="_blank"><img src={Instagram} alt=""/></a></li>
               <li><a href="https://www.twitch.tv/aryllchan" target="_blank"><img src={Twitch} alt=""/></a></li>
             </ul>
+            <li id="madeby"><a href="https://www.mobasergio.com" target="_blank">Made with ♥ by Cergi</a></li>
           </ul>
         </div>
       </nav>

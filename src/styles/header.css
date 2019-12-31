@@ -1,3 +1,10 @@
+#madeby {
+  margin-top: 20px;
+}
+#madeby a {
+  font-size: 10px;
+  color: #797979;
+}
 .container header {
   height: 110px;
   width: 100%;
