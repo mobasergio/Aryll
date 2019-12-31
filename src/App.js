@@ -11,7 +11,7 @@ import Contact from './pages/Contact'
 import Disclaimer from './pages/Disclaimer'
 
 export default () => (
-  <div className="container">
+  <div className="container" onContextMenu={(e)=> e.preventDefault()}>
     <Navbar />
     <Router>
       <Home path="/" />
