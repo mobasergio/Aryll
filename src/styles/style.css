@@ -135,6 +135,10 @@ body {
 .container header #menu div ul li > a > img:focus {
   filter: invert(79%) sepia(94%) saturate(3643%) hue-rotate(288deg) brightness(102%) contrast(112%);
 }
+.container #loader {
+  display: block;
+  margin: 12% auto 0 auto;
+}
 .container > div {
   width: 100%;
 }

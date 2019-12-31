@@ -1,3 +1,7 @@
+.container #loader {
+  display: block;
+  margin: 12% auto 0 auto;
+}
 .container > div {
   width: 100%;
 }

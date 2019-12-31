@@ -2,11 +2,13 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Axios from 'axios';
 import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
+import Loader from '../assets/loader.svg';
 
 const FanArt = () => {
   const [urls, setUrls] = useState([]);
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const openLightbox = useCallback((event, { photo, index }) => {
     setCurrentImage(index);
@@ -19,16 +21,27 @@ const FanArt = () => {
   };
 
   useEffect(() => {
-    Axios.get('https://res.cloudinary.com/aryll/image/list/fanarts.json')
-      .then(result => setUrls(result.data.resources))
-      .catch(error => console.log('error:', error));
-    }, []);
+    async function fetchData() {
+      await Axios.get("https://res.cloudinary.com/aryll/image/list/fanarts.json")
+        .then(result => setUrls(result.data.resources))
+        .catch(error => console.log("error:", error));
+      await setLoading(false);
+    }
+    fetchData();
+  }, []);
   
   const photos = []
-  urls.map(x => photos.push({src: `http://res.cloudinary.com/aryll/${x.public_id}`, width: 1, height: 1}))
-
   const thumbPhotos = []
+  urls.map(x => photos.push({src: `http://res.cloudinary.com/aryll/${x.public_id}`, width: 1, height: 1}))
   urls.map(x => thumbPhotos.push({src: `http://res.cloudinary.com/aryll/c_thumb,w_400/${x.public_id}`, width: 1, height: 1}))
+
+  if (loading) {
+    return (
+      <main>
+        <img id="loader" src={Loader} alt=""/>
+      </main>
+    )
+  }
 
   return (
     <main>
