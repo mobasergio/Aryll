@@ -32,8 +32,8 @@ const Emotes = () => {
   
   const photos = []
   const thumbPhotos = []
-  urls.map(x => photos.push({src: `http://res.cloudinary.com/aryll/${x.public_id}`, width: 1, height: 1}))
-  urls.map(x => thumbPhotos.push({src: `http://res.cloudinary.com/aryll/c_thumb,w_400/${x.public_id}`, width: 1, height: 1}))
+  urls.map(x => photos.push({src: `https://res.cloudinary.com/aryll/${x.public_id}`, width: 1, height: 1}))
+  urls.map(x => thumbPhotos.push({src: `https://res.cloudinary.com/aryll/c_thumb,w_400/${x.public_id}`, width: 1, height: 1}))
 
   if (loading) {
     return (
