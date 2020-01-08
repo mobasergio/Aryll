@@ -13,9 +13,13 @@
   font-family: "Montserrat", sans-serif;
 }
 .container header nav > div:nth-of-type(1) {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin: 30px auto;
   width: 90%;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 .container header nav > div:nth-of-type(1) div:nth-of-type(1) {
@@ -38,7 +42,7 @@
   display: none;
 }
 .container header nav > div:nth-of-type(2) > ul li a:hover {
-  color: #FFB6C1 !important;
+  color: #ffb6c1 !important;
 }
 .container header nav > div:nth-of-type(2) div:nth-of-type(1) {
   width: 48px;
@@ -47,10 +51,15 @@
 }
 .container header nav > div:nth-of-type(2) #social {
   margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
 }
 .container header nav > div:nth-of-type(2) #social > li a img:hover {
+  -webkit-filter: invert(78%) sepia(14%) saturate(873%) hue-rotate(304deg) brightness(130%) contrast(114%);
   filter: invert(78%) sepia(14%) saturate(873%) hue-rotate(304deg) brightness(130%) contrast(114%);
 }
 .container header #menu {
@@ -60,6 +69,7 @@
   width: 100%;
   background-color: white;
   display: block;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
   z-index: 0;
 }
@@ -71,6 +81,9 @@
   font-family: "Montserrat", sans-serif;
   font-size: 24px;
   margin-top: 120px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
   text-transform: uppercase;
 }
@@ -93,14 +106,20 @@
   background-color: white;
 }
 .container header #menu div ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
   margin-top: 20px;
 }
 .container header #menu div ul li > a > img {
+  -webkit-filter: invert(50%);
   filter: invert(50%);
 }
 .container header #menu div ul li > a > img:hover,
 .container header #menu div ul li > a > img:focus {
+  -webkit-filter: invert(79%) sepia(94%) saturate(3643%) hue-rotate(288deg) brightness(102%) contrast(112%);
   filter: invert(79%) sepia(94%) saturate(3643%) hue-rotate(288deg) brightness(102%) contrast(112%);
 }

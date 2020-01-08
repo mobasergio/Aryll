@@ -1,31 +1,39 @@
 .hide {
   z-index: -5;
   opacity: 0;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
   pointer-events: none;
 }
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 body {
   overflow-x: hidden;
-  background: url('../assets/background.jpg');
+  background: url("../assets/background.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  background-color: #FFB6C1;
+  background-color: #ffb6c1;
   color: #444444;
 }
 .container {
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
   width: 100%;
   max-width: 1200px;
   background-color: rgba(255, 255, 255, 0.9);
+  -webkit-box-shadow: 0 0 10px;
   box-shadow: 0 0 10px;
 }
