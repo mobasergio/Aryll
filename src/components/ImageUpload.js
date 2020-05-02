@@ -9,7 +9,7 @@ const FileUpload = (props) => {
     try {
 
       if (!event.target.files) {
-        console.log('No files to upload!', event.target.files)
+        console.error('No files to upload!', event.target.files)
         return
       }
       
@@ -31,7 +31,6 @@ const FileUpload = (props) => {
           })
         }))
         localStorage.clear()
-      console.log('result', result)
     } catch (error) {
       console.error(error)
     }
