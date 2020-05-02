@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import Axios from 'axios';
 import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import Loader from '../assets/loader.svg';
+import firebase from "../firebase/index"
 
-const Emotes = () => {
-  const [urls, setUrls] = useState([]);
+const FanArt = () => {
+  const [urls, setUrls] = useState();
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -21,19 +21,24 @@ const Emotes = () => {
   };
 
   useEffect(() => {
-    async function fetchData() {
-      await Axios.get("https://res.cloudinary.com/aryll/image/list/emotes.json")
-        .then(result => setUrls(result.data.resources))
-        .catch(error => console.log("error:", error));
-      await setLoading(false);
-    }
-    fetchData();
-  }, []);
+    const getImages = async () => {
+      let folder = await firebase.storage().ref().child('EMOTES/').listAll();
   
-  const photos = []
-  const thumbPhotos = []
-  urls.map(x => photos.push({src: `https://res.cloudinary.com/aryll/${x.public_id}`, width: 1, height: 1}))
-  urls.map(x => thumbPhotos.push({src: `https://res.cloudinary.com/aryll/c_thumb,w_400/${x.public_id}`, width: 1, height: 1}))
+      try {
+        const result = await Promise.all(Array.from(folder.items).map(itemRef => {
+          return new Promise(async resolve => {
+            const url = await itemRef.getDownloadURL()
+            resolve({src: url, width: 1, height: 1})
+          })
+        }))
+        setUrls(result)
+        setLoading(false)
+      } catch (error) { 
+        console.error(error)
+      }
+    };
+    getImages()
+  }, [])
 
   if (loading) {
     return (
@@ -46,11 +51,11 @@ const Emotes = () => {
   return (
     <main>
       <div id="gallery">
-        <Gallery photos={thumbPhotos} onClick={openLightbox} />
+        <Gallery photos={urls} onClick={openLightbox} />
         <ModalGateway>
           {viewerIsOpen ? (
             <Modal onClose={closeLightbox}>
-              <Carousel currentIndex={currentImage} views={photos.map(x => ({ ...x }))} />
+              <Carousel currentIndex={currentImage} views={urls.map(x => ({ ...x }))} />
             </Modal>
           ) : null}
         </ModalGateway>
@@ -60,4 +65,4 @@ const Emotes = () => {
 
 };
 
-export default Emotes;
+export default FanArt;
