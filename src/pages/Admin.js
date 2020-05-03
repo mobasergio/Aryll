@@ -11,6 +11,7 @@ const Admin = () => {
     event.preventDefault();
     firebase.auth().signInWithEmailAndPassword(account.email, account.password).then((account) => {
       setPanel(true)
+      console.log(account)
     })
     .catch(function (e) {
       setError(true);
@@ -37,7 +38,7 @@ const Admin = () => {
           <input name="email" type="email" placeholder="Email" value={account.email} onChange={handleInputChange}/>
           <input name="password" type="password" placeholder="Password" value={account.password} onChange={handleInputChange}/>
           <input type="submit" value="Log in"/>
-          <p style={{display: error ? 'block' : 'none', color: 'red'}}>Ya lo has escrito mal miralo bien por favor ya</p>
+          <p style={{display: error ? 'block' : 'none'}}>Ya lo has escrito mal miralo bien por favor ya</p>
         </form>
       </div>
     </main>
