@@ -27,7 +27,7 @@ const FanArt = () => {
   isMobileDevice() === true ? (
     useEffect(() => {
       const getImages = async () => {
-        let folder = await firebase.storage().ref().child('CHARACTER-DESIGN/thumbs').listAll();
+        let folder = await firebase.storage().ref().child('EMOTES/thumbs').listAll();
         try {
           const result = await Promise.all(Array.from(folder.items).map(itemRef => {
             return new Promise(async resolve => {
@@ -46,7 +46,7 @@ const FanArt = () => {
   ) : (
     useEffect(() => {
       const getImages = async () => {
-        let folder = await firebase.storage().ref().child('CHARACTER-DESIGN/').listAll();
+        let folder = await firebase.storage().ref().child('EMOTES/').listAll();
         try {
           const result = await Promise.all(Array.from(folder.items).map(itemRef => {
             return new Promise(async resolve => {
