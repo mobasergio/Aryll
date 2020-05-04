@@ -173,3 +173,9 @@
   border: 1px solid;
   padding: 5px;
 }
+.container > div main #galeria {
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}

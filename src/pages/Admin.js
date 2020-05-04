@@ -34,7 +34,7 @@ const Admin = () => {
     setAccount({...account, [name]: value})
   }
 
-  if (panel) {
+  if (true) {
     return (
       <Panel />
     )

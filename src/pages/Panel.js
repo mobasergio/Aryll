@@ -22,7 +22,7 @@ const Panel = () => {
   }
 
   const getImages = async (categoryName) => {
-    if (categoryName == '-') return
+    if (categoryName == '-') setUrls([])
     if (Reflect.has(imagesRef.current, categoryName)) {
       setUrls(imagesRef.current[categoryName])
       return
@@ -68,18 +68,20 @@ const Panel = () => {
     <main>
       <div id="panel">
         <h1>Admin panel</h1>
-        <ImageUpload category={category}/>
-        <label htmlFor="category">Elige una categoria:</label>
-        <select id="category" onChange={(e) => { setCategory(e.target.value) }}>
+        <label htmlFor="category" style={{fontSize: 18}}>Elige una categoria: </label>
+        <select id="category" onChange={(e) => { setCategory(e.target.value) }} style={{marginBottom: 20, fontSize: 16, outline: 0}}>
           <option value="-">-</option>
-          <option value="CHARACTER-DESIGN">Character Design</option>
-          <option value="FANART">Fanart</option>
-          <option value="EMOTES">Emotes</option>
-          <option value="CONCEPT">Concept Art</option>
+          <option value="CHARACTER-DESIGN">1.- Character Design</option>
+          <option value="FANART">2.- Fanart</option>
+          <option value="EMOTES">3.- Emotes</option>
+          <option value="CONCEPT">4.- Concept Art</option>
         </select>
+        <ImageUpload category={category}/>
         <div id="galeria">
           {urls.map(({url, fullPath}) =>
-            <img onClick={() => deleteImage(fullPath, url)} style={{width: '25%', height: 220, cursor: 'pointer'}} src={url} key={url}></img>
+          <div style={{maxWidth: '300px', height: '300px', margin: '0 auto', border: '1px solid gray'}}>
+            <img style={{width: '100%', height: '100%', cursor: 'pointer'}} onClick={() => deleteImage(fullPath, url)} src={url} key={url}></img>
+          </div>
           )}
         </div>
       </div>
