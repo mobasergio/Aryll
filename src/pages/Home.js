@@ -10,12 +10,11 @@ const Home = () => {
       <div id="bio">
         <h1>Hi! I'm Rosana</h1>
         <p>
-          I'm a 27 years old girl from Spain. I've studied Arts at Sevilla
-          University, Digital Illustration and Visual Development at Escuela
-          Trazos (Madrid), and a Character Design Expert program at U-TAD, The
-          Digital University Centre (Madrid). I've worked in some indie
-          videogame projects, but currently I'm working as a freelance
-          illustrator. Also, I stream everyday on my Twitch channel.
+          I'm a 27 years old girl from Spain. I've studied Arts at Sevilla University, Digital Illustration and Visual 
+          Development at <a href="https://trazos.net/" target="_blank"> Escuela Trazos (Madrid)</a>, and a Character Design 
+          Expert program at <a href="https://www.u-tad.com/" target="_blank">U-TAD, The Digital University Centre (Madrid)</a>. 
+          I've worked in some indie videogame projects, but currently I'm working as a freelance illustrator. 
+          Also, I <a href="https://www.twitch.tv/aryllchan" target="_blank"> stream everyday</a> on my Twitch channel.
         </p>
       </div>
       <iframe

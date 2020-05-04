@@ -35,6 +35,12 @@
   max-width: 742px;
   margin: 0 auto;
 }
+.container > div main #bio a {
+  color: palevioletred;
+}
+.container > div main #bio a:hover {
+  color: #ffb6c1;
+}
 .container > div main iframe {
   display: none;
 }
