@@ -24,45 +24,26 @@ const FanArt = () => {
     return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
   };
 
-  isMobileDevice() === true ? (
-    useEffect(() => {
-      const getImages = async () => {
-        let folder = await firebase.storage().ref().child('EMOTES/thumbs').listAll();
-        try {
-          const result = await Promise.all(Array.from(folder.items).map(itemRef => {
-            return new Promise(async resolve => {
-              const url = await itemRef.getDownloadURL()
-              resolve({src: url, width: 1, height: 1})
-            })
-          }))
-          setUrls(result)
-          setLoading(false)
-        } catch (error) { 
-          console.error(error)
-        }
-      };
-      getImages()
-    }, [])
-  ) : (
-    useEffect(() => {
-      const getImages = async () => {
-        let folder = await firebase.storage().ref().child('EMOTES/').listAll();
-        try {
-          const result = await Promise.all(Array.from(folder.items).map(itemRef => {
-            return new Promise(async resolve => {
-              const url = await itemRef.getDownloadURL()
-              resolve({src: url, width: 1, height: 1})
-            })
-          }))
-          setUrls(result)
-          setLoading(false)
-        } catch (error) { 
-          console.error(error)
-        }
-      };
-      getImages()
-    }, [])
-  )
+  const photoQualityURL = isMobileDevice() === true ? 'EMOTES/thumbs' : 'EMOTES';
+  
+  useEffect(() => {
+    const getImages = async () => {
+      let folder = await firebase.storage().ref().child(photoQualityURL).listAll();
+      try {
+        const result = await Promise.all(Array.from(folder.items).map(itemRef => {
+          return new Promise(async resolve => {
+            const url = await itemRef.getDownloadURL()
+            resolve({src: url, width: 1, height: 1})
+          })
+        }))
+        setUrls(result)
+        setLoading(false)
+      } catch (error) { 
+        console.error(error)
+      }
+    };
+    getImages()
+  }, [])
 
   if (loading) {
     return (
