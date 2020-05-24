@@ -12,7 +12,7 @@
     "disable-scroll": "0.5.1",
     "dotenv": "^8.2.0",
     "emailjs-com": "^2.4.1",
-    "firebase": "^7.14.4",
+    "firebase": "^7.14.5",
     "main.css": "2.1.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
