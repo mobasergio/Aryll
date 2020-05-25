@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import "firebase/auth";
 import "firebase/storage";
+import 'firebase/analytics';
 import dotenv from 'dotenv'
 dotenv.config()
 
@@ -14,5 +15,7 @@ var config = firebase.initializeApp( {
   appId: process.env.appId,
   measurementId: process.env.measurementId
 });
+
+firebase.analytics()
 
 export default config;
