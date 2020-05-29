@@ -12,7 +12,7 @@
     "disable-scroll": "0.5.1",
     "dotenv": "^8.2.0",
     "emailjs-com": "^2.4.1",
-    "firebase": "^7.14.5",
+    "firebase": "^7.14.6",
     "main.css": "2.1.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
@@ -21,9 +21,9 @@
     "react-photo-gallery": "8.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.6",
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/plugin-transform-react-jsx": "^7.9.4",
+    "@babel/core": "^7.10.1",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/plugin-transform-react-jsx": "^7.10.1",
     "babel-preset-nano-react-app": "^0.1.0",
     "parcel-bundler": "1.12.4"
   },
