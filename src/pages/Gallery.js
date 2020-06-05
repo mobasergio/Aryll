@@ -4,7 +4,7 @@ import Carousel, { Modal, ModalGateway } from "react-images";
 import Loader from '../assets/loader.svg';
 import firebase from "../firebase/index"
 
-const FanArt = () => {
+const FanArt = ({category}) => {
   const [urls, setUrls] = useState();
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
@@ -24,7 +24,7 @@ const FanArt = () => {
     return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
   };
 
-  const photoQualityURL = isMobileDevice() === true ? 'EMOTES/thumbs' : 'EMOTES';
+  const photoQualityURL = isMobileDevice() === true ? `${category}/thumbs` : category;
   
   useEffect(() => {
     const getImages = async () => {

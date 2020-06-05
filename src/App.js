@@ -3,10 +3,7 @@ import './styles/style.css';
 import { Router } from "@reach/router";
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import CharacterDesign from './pages/CharacterDesign';
-import FanArt from './pages/FanArt';
-import Emotes from './pages/Emotes';
-import Concept from './pages/Concept';
+import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 import Disclaimer from './pages/Disclaimer';
 import Admin from './pages/Admin';
@@ -16,13 +13,13 @@ export default () => (
     <Navbar />
     <Router>
       <Home path="/" />
-      <CharacterDesign path="/character-design"/>
-      <FanArt path="/fanart"/>
-      <Emotes path="/emotes"/>
-      <Concept path="/concept"/>
+      <Gallery category="CHARACTER-DESIGN" path="/character-design"/>
+      <Gallery category="FANART" path="/fanart"/>
+      <Gallery category="EMOTES" path="/emotes"/>
+      <Gallery category="CONCEPT" path="/concept"/>
       <Contact path="/contact"/>
       <Disclaimer path="/disclaimer"/>
-      <Admin path="/admin"/>
+      <Admin path="/admin"/>  
     </Router>
   </div>
 )
