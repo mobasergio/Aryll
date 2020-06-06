@@ -9,7 +9,7 @@ import Disclaimer from './pages/Disclaimer';
 import Admin from './pages/Admin';
 
 export default () => (
-  <div className="container" onContextMenu={(e)=> e.preventDefault()}>
+  <div className="container">
     <Navbar />
     <Router>
       <Home path="/" />
