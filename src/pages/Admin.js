@@ -15,7 +15,7 @@ const Admin = () => {
   }
   
   const errorMessages = () => {
-    if (error != 3) { setError((prevState) => (prevState + 1)) }
+    if (error !== 3) { setError((prevState) => (prevState + 1)) }
   }
 
   const handleSubmit = event => {
@@ -48,7 +48,7 @@ const Admin = () => {
           <input name="email" type="email" placeholder="Email" value={account.email} onChange={handleInputChange} required/>
           <input name="password" type="password" placeholder="Password" value={account.password} onChange={handleInputChange} required/>
           <input type="submit" value="Log in"/>
-          <p style={{display: error != 0 ? 'block' : 'none'}}>{errorCodes[error]}</p>
+          <p style={{display: error !== 0 ? 'block' : 'none'}}>{errorCodes[error]}</p>
         </form>
       </div>
     </main>

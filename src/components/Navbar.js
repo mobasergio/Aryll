@@ -30,7 +30,7 @@ const Navbar = () => {
   const toggleMenu = () => {
     topFunction();
     setMenu(!menu);
-    menu == true ? disableScroll.on() : disableScroll.off();
+    menu === true ? disableScroll.on() : disableScroll.off();
   };
 
   return (
@@ -51,11 +51,11 @@ const Navbar = () => {
             <li><NavLink to="/contact">Contact</NavLink></li>
             <li><NavLink to="/disclaimer">Disclaimer</NavLink></li>
             <ul id="social">
-              <li><a href="https://www.twitter.com/PsychoAryll" target="_blank"><img src={Twitter} alt=""/></a></li>
-              <li><a href="https://www.instagram.com/psychoaryll/" target="_blank"><img src={Instagram} alt=""/></a></li>
-              <li><a href="https://www.twitch.tv/aryllchan" target="_blank"><img src={Twitch} alt=""/></a></li>
+              <li><a href="https://www.twitter.com/PsychoAryll" target="_blank" rel="noopener noreferrer"><img src={Twitter} alt=""/></a></li>
+              <li><a href="https://www.instagram.com/psychoaryll/" target="_blank" rel="noopener noreferrer"><img src={Instagram} alt=""/></a></li>
+              <li><a href="https://www.twitch.tv/aryllchan" target="_blank" rel="noopener noreferrer"><img src={Twitch} alt=""/></a></li>
             </ul>
-            <li id="madeby"><a href="https://www.mobasergio.com" target="_blank">Made with ♥ by Mobasergio</a></li>
+            <li id="madeby"><a href="https://www.mobasergio.com" target="_blank" rel="noopener noreferrer">Made with ♥ by Mobasergio</a></li>
           </ul>
         </div>
       </nav>
@@ -71,9 +71,9 @@ const Navbar = () => {
         </ul>
         <div>
           <ul>
-            <li><a href="https://www.twitter.com/PsychoAryll" target="_blank"><img src={Twitter} alt=""/></a></li>
-            <li><a href="https://www.instagram.com/psychoaryll/" target="_blank"><img src={Instagram} alt=""/></a></li>
-            <li><a href="https://www.twitch.tv/aryllchan" target="_blank"><img src={Twitch} alt=""/></a></li>
+            <li><a href="https://www.twitter.com/PsychoAryll" target="_blank" rel="noopener noreferrer"><img src={Twitter} alt=""/></a></li>
+            <li><a href="https://www.instagram.com/psychoaryll/" target="_blank" rel="noopener noreferrer"><img src={Instagram} alt=""/></a></li>
+            <li><a href="https://www.twitch.tv/aryllchan" target="_blank" rel="noopener noreferrer"><img src={Twitch} alt=""/></a></li>
           </ul>
         </div>
       </div>

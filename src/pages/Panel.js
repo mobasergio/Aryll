@@ -8,7 +8,7 @@ const Panel = () => {
   const imagesRef = useRef({})
 
   const deleteImage = async (imagePath, imageURL) => {
-    let deleteImage = confirm("¿Segura que quieres borrarla?");
+    let deleteImage = window.confirm("¿Segura que quieres borrarla?");
     if (deleteImage) {
     const imageRef = firebase.storage().ref(imagePath)
     try {
@@ -22,7 +22,7 @@ const Panel = () => {
   }
 
   const getImages = async (categoryName) => {
-    if (categoryName == '-') setUrls([])
+    if (categoryName === '-') setUrls([])
     if (Reflect.has(imagesRef.current, categoryName)) {
       setUrls(imagesRef.current[categoryName])
       return
@@ -80,7 +80,7 @@ const Panel = () => {
         <div id="galeria">
           {urls.map(({url, fullPath}) =>
           <div style={{maxWidth: '300px', height: '300px', margin: '0 auto', border: '1px solid gray'}}>
-            <img style={{width: '100%', height: '100%', cursor: 'pointer'}} onClick={() => deleteImage(fullPath, url)} src={url} key={url}></img>
+            <img style={{width: '100%', height: '100%', cursor: 'pointer'}} onClick={() => deleteImage(fullPath, url)} src={url} key={url} alt=""></img>
           </div>
           )}
         </div>

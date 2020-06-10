@@ -15,7 +15,7 @@ const FileUpload = (props) => {
       
       progressRef.current = Array.from({length: event.target.files.length}).map(() => 0);
   
-      const result = await Promise.all([...event.target.files].map((file, index) => {
+      await Promise.all([...event.target.files].map((file, index) => {
           return new Promise((resolve, reject) => {
             const storageRef = firebase.storage().ref(`${props.category}/${file.name}`)
             const task = storageRef.put(file)
@@ -40,7 +40,7 @@ const FileUpload = (props) => {
     return (
       <div style={{marginBottom: 20}}>
         <progress value={progressValue} max="100">{progressValue}%</progress>
-        {progressValue === 100 ? <span> &#x2705;</span> : ''}
+        {progressValue === 100 ? <span role="img" aria-label="Finished"> &#x2705;</span> : ''}
         <br />
         <input type="file" onChange={handleOnChange} accept="image/*" multiple/>
       </div>

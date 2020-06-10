@@ -43,7 +43,7 @@ const FanArt = ({category}) => {
       }
     };
     getImages()
-  }, [])
+  }, [photoQualityURL])
 
   if (loading) {
     return (
