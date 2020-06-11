@@ -19,7 +19,7 @@ const Home = () => {
       </div>
       <iframe
         title="streaming"
-        src="https://player.twitch.tv/?channel=aryllchan&muted=true"
+        src="https://player.twitch.tv/?channel=aryllchan&parent=www.aryll.art&muted=true"
         width="320"
         height="180"
         frameBorder="0"
