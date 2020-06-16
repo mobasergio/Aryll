@@ -6,6 +6,7 @@ import firebase from "../firebase/index"
 
 const FanArt = ({category}) => {
   const [urls, setUrls] = useState();
+  const [thumbnails, setThumbnails] = useState();
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -29,6 +30,7 @@ const FanArt = ({category}) => {
   useEffect(() => {
     const getImages = async () => {
       let folder = await firebase.storage().ref().child(photoQualityURL).listAll();
+      let thumbs = await firebase.storage().ref().child(`${category}/thumbs`).listAll();
       try {
         const result = await Promise.all(Array.from(folder.items).map(itemRef => {
           return new Promise(async resolve => {
@@ -36,14 +38,21 @@ const FanArt = ({category}) => {
             resolve({src: url, width: 1, height: 1})
           })
         }))
-        setUrls(result)
+        const thumbies = await Promise.all(Array.from(thumbs.items).map(itemRef => {
+          return new Promise(async resolve => {
+            const url = await itemRef.getDownloadURL()
+            resolve({src: url, width: 1, height: 1})
+          })
+        }))
+        setThumbnails(thumbies.sort())
+        setUrls(result.sort())
         setLoading(false)
       } catch (error) { 
         console.error(error)
       }
     };
     getImages()
-  }, [photoQualityURL])
+  }, [photoQualityURL, category])
 
   if (loading) {
     return (
@@ -56,7 +65,7 @@ const FanArt = ({category}) => {
   return (
     <main>
       <div id="gallery">
-        <Gallery photos={urls} onClick={openLightbox} />
+        <Gallery photos={thumbnails} onClick={openLightbox} />
         <ModalGateway>
           {viewerIsOpen ? (
             <Modal onClose={closeLightbox}>
