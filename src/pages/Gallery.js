@@ -20,22 +20,16 @@ const FanArt = ({category}) => {
     setCurrentImage(0);
     setViewerIsOpen(false);
   };
-
-  const isMobileDevice = () => {
-    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
-  };
-
-  const photoQualityURL = isMobileDevice() === true ? `${category}/thumbs` : category;
   
   useEffect(() => {
     const getImages = async () => {
-      let folder = await firebase.storage().ref().child(photoQualityURL).listAll();
+      let folder = await firebase.storage().ref().child(category).listAll();
       let thumbs = await firebase.storage().ref().child(`${category}/thumbs`).listAll();
       try {
         const result = await Promise.all(Array.from(folder.items).map(itemRef => {
           return new Promise(async resolve => {
             const url = await itemRef.getDownloadURL()
-            resolve({src: url, width: 1, height: 1})
+            resolve({src: url})
           })
         }))
         const thumbies = await Promise.all(Array.from(thumbs.items).map(itemRef => {
@@ -52,7 +46,7 @@ const FanArt = ({category}) => {
       }
     };
     getImages()
-  }, [photoQualityURL, category])
+  }, [category])
 
   if (loading) {
     return (
