@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from "@reach/router"
 import disableScroll from 'disable-scroll';
-
 import Sakura from '../assets/sakura.png';
 import Menu from '../assets/menu.svg';
 import Twitter from '../assets/twitter.svg';
@@ -9,13 +8,9 @@ import Instagram from '../assets/instagram.svg';
 import Twitch from '../assets/twitch.svg';
 
 const NavLink = props => (
-  <Link
-    {...props}
-    getProps={({ isCurrent }) => {
+  <Link {...props} getProps={({ isCurrent }) => {
       return {
-        style: {
-          color: isCurrent ? "#FFB6C1" : "#444444"
-        }
+        style: { color: isCurrent ? "#FFB6C1" : "#444444" }
       };
     }}
   />

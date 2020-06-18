@@ -10,16 +10,16 @@ const Panel = () => {
   const deleteImage = async (imagePath, imageURL) => {
     let deleteImage = window.confirm("¿Segura que quieres borrarla?");
     if (deleteImage) {
-    const imageRef = firebase.storage().ref(imagePath)
-    try {
-      await imageRef.delete()
-      localStorage.clear()
-      setUrls(urls => urls.filter(item => item.url !== imageURL))
-    } catch (error) { 
-      console.error(error)
+      const imageRef = firebase.storage().ref(imagePath);
+      try {
+        await imageRef.delete();
+        localStorage.clear();
+        setUrls((urls) => urls.filter((item) => item.url !== imageURL));
+      } catch (error) {
+        console.error(error);
+      }
     }
-    }
-  }
+  };
 
   const getImages = async (categoryName) => {
     if (categoryName === '-') setUrls([])

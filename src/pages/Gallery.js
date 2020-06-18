@@ -44,8 +44,8 @@ const FanArt = ({category}) => {
             resolve({src: url, width: 1, height: 1})
           })
         }))
-        setThumbnails(thumbies.sort())
-        setUrls(result.sort())
+        setThumbnails(thumbies)
+        setUrls(result)
         setLoading(false)
       } catch (error) { 
         console.error(error)

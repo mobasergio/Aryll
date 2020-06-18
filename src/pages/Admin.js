@@ -11,12 +11,14 @@ const Admin = () => {
     0: "",
     1: "Asi no es, ponlo bien",
     2: "Que asi no es miralo bien que esta mal",
-    3: "Mira yo paso ya"
-  }
+    3: "Mira yo paso ya",
+  };
   
   const errorMessages = () => {
-    if (error !== 3) { setError((prevState) => (prevState + 1)) }
-  }
+    if (error !== 3) {
+      setError((prevState) => prevState + 1);
+    }
+  };
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -29,15 +31,13 @@ const Admin = () => {
     });
   }
 
-  const handleInputChange = e => {
-    const {name, value} = e.target
-    setAccount({...account, [name]: value})
-  }
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setAccount({ ...account, [name]: value });
+  };
 
   if (panel) {
-    return (
-      <Panel />
-    )
+    return <Panel />;
   }
 
   return (
