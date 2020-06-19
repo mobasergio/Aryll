@@ -5,8 +5,7 @@ import Loader from '../assets/loader.svg';
 import firebase from "../firebase/index"
 
 const FanArt = ({category}) => {
-  const [urls, setUrls] = useState();
-  const [thumbnails, setThumbnails] = useState();
+  const [LQimages, setLQimages] = useState([]);
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -20,26 +19,29 @@ const FanArt = ({category}) => {
     setCurrentImage(0);
     setViewerIsOpen(false);
   };
+
+  const randomizeImages = (imagesArray) => {
+    return imagesArray.map((a) => [Math.random(),a]).sort((a,b) => a[0]-b[0]).map((a) => a[1]);
+  }
+
+  const fullImage = (images) => {
+    const arr = []
+    images.map(x => arr.push({src: x.src.replace("%2Fthumbs", "").replace("_400x400", "")}))
+    return arr;
+  }
   
   useEffect(() => {
     const getImages = async () => {
-      let folder = await firebase.storage().ref().child(category).listAll();
-      let thumbs = await firebase.storage().ref().child(`${category}/thumbs`).listAll();
+      let images = await firebase.storage().ref().child(`${category}/thumbs`).listAll();
       try {
-        const result = await Promise.all(Array.from(folder.items).map(itemRef => {
-          return new Promise(async resolve => {
-            const url = await itemRef.getDownloadURL()
-            resolve({src: url})
-          })
-        }))
-        const thumbies = await Promise.all(Array.from(thumbs.items).map(itemRef => {
+        const result = await Promise.all(Array.from(images.items).map(itemRef => {
           return new Promise(async resolve => {
             const url = await itemRef.getDownloadURL()
             resolve({src: url, width: 1, height: 1})
           })
         }))
-        setThumbnails(thumbies)
-        setUrls(result)
+        setLQimages(randomizeImages(result));
+        fullImage(result);
         setLoading(false)
       } catch (error) { 
         console.error(error)
@@ -59,11 +61,11 @@ const FanArt = ({category}) => {
   return (
     <main>
       <div id="gallery">
-        <Gallery photos={thumbnails} onClick={openLightbox} />
+        <Gallery photos={LQimages} onClick={openLightbox} />
         <ModalGateway>
           {viewerIsOpen ? (
             <Modal onClose={closeLightbox}>
-              <Carousel currentIndex={currentImage} views={urls.map(x => ({ ...x }))} />
+              <Carousel currentIndex={currentImage} views={fullImage(LQimages)} />
             </Modal>
           ) : null}
         </ModalGateway>
